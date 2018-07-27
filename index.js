@@ -158,9 +158,13 @@ var canvas = {
             var X = _this.moveEndX - _this.startX;
             if ( X < -20 ) {
                 colors.style.left = '-94vw'
+                document.querySelector('.firstPage').classList.remove('active')
+                document.querySelector('.secondPage').classList.add('active')
             }
             if( X > 20 ){
                 colors.style.left = '0'
+                document.querySelector('.firstPage').classList.add('active')
+                document.querySelector('.secondPage').classList.remove('active')
             }
         }
     },

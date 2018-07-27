@@ -74,10 +74,15 @@ body {
     width: 33px;
     height: 33px;
 }
+
 .footer-control button.dl img,
 .footer-control button.clear img{
-    width: 20px;
-    height: 20px;
+    position: absolute; left: 50%; top: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
 }
 .footer-control button.brush {
     background-color: #EF8A7E;
@@ -102,16 +107,15 @@ body {
     background-color: #000000;
 }
 .footer-control button.dl.active {
-    background: lightblue;
-            /*#6D7B95;*/
+    background: lightgreen;
 }
 .footer-control button.dl.active::after {
     content: '';
     display: block;
     width: 0;
     height: 0;
-    border-bottom: 3.5px solid lightblue;
-    border-right: 3.5px solid lightblue;
+    border-bottom: 3.5px solid #cccccc;
+    border-right: 3.5px solid #cccccc;
     border-top: 3.5px solid #fff;
     border-left: 3.5px solid #fff;
     position: absolute;
@@ -229,7 +233,7 @@ body {
 .choose .chooseColor {
     position: relative;
     width: 94vw;
-    height: 190px;
+    height: 205px;
     margin: 0 auto;
     border: 1px solid #eee;
     overflow: hidden;
@@ -238,7 +242,7 @@ body {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 800px;
+    width: 200vw;
     overflow: hidden;
     transition: all 1s;
 }
@@ -262,7 +266,7 @@ body {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    margin: 10px 15px;
+    margin: 10px 3vw;
     background: #EBEBEB;
     border: 1px solid #fff;
 }
@@ -310,7 +314,7 @@ body {
     background: #009380;
 }
 .chooseColor .button-15 {
-    background: #8EDF92;
+    background: #C17730;
 }
 .chooseColor .button-16 {
     background: #6EE6C3;
@@ -357,6 +361,28 @@ body {
 }
 .chooseColor .button-30 {
     background: #D8957A;
+}
+.circle-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 22px;
+}
+.firstPage,
+.secondPage{
+    width: 5px;
+    height: 5px;
+    margin: 0px 7px;
+    border-radius: 50%;
+    background: #cccccc;
+}
+.firstPage.active,
+.secondPage.active{
+    background: #E9D2B3;
 }
 .clearfix:after {
     content: '';
