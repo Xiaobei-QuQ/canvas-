@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>canvas画板</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <canvas id="sketchpad"></canvas>
+    <div class="head-control" id="heade-control">
+        <div class="control control-width">
+            <img src="./imgs/seek_width_bg.png" alt="">
+            <div class="head-circle circle-width"></div>
+        </div>
+        <div class="control control-alpha">
+            <img src="./imgs/transparency_02.png" alt="">
+            <div class="head-circle circle-alpha"></div>
+        </div>
+    </div>
+    <div class="choose">
+        <div class="chooseBrush" id="chooseBrush">
+            <ul>
+                <li>
+                    <button class="brush-pencil active"><img src="./imgs/ic_menu_pencil.png" alt=""></button>
+                </li>
+                <li>
+                    <button class="brush-pen"><img src="./imgs/ic_menu_pen.png" alt=""></button>
+                </li>
+                <li>
+                    <button class="brush-watercolor"><img src="./imgs/ic_menu_watercolor.png" alt=""></button>
+                </li>
+                <li>
+                    <button class="brush-soft"><img src="./imgs/ic_menu_soft_charcoal.png" alt=""></button>
+                </li>
+            </ul>
+        </div>
+        <div class="chooseColor" id="chooseColor">
+            <div class="colors clearfix">
+                <div class="colors-1">
+                    <div class="buttons">
+                        <div class="button button-1"></div>
+                        <div class="button button-2"></div>
+                        <div class="button button-3"></div>
+                        <div class="button button-4"></div>
+                        <div class="button button-5"></div>
+                        <div class="button button-6"></div>
+                        <div class="button button-7"></div>
+                        <div class="button button-8"></div>
+                        <div class="button button-9"></div>
+                        <div class="button button-10"></div>
+                        <div class="button button-11"></div>
+                        <div class="button button-12"></div>
+                        <div class="button button-13"></div>
+                        <div class="button button-14"></div>
+                        <div class="button button-15"></div>
+                    </div>
+                </div>
+                <div class="colors-2">
+                   <div class="buttons">
+                       <div class="button button-16"></div>
+                       <div class="button button-17"></div>
+                       <div class="button button-18"></div>
+                       <div class="button button-19"></div>
+                       <div class="button button-20"></div>
+                       <div class="button button-21"></div>
+                       <div class="button button-22"></div>
+                       <div class="button button-23"></div>
+                       <div class="button button-24"></div>
+                       <div class="button button-25"></div>
+                       <div class="button button-26"></div>
+                       <div class="button button-27"></div>
+                       <div class="button button-28"></div>
+                       <div class="button button-29"></div>
+                       <div class="button button-30"></div>
+                   </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="chooseBg" id="chooseBg">
+
+        </div>
+    </div>
+    <div class="footer-control" id="footer-control">
+        <button class='brush active' id="brush"><img src="./imgs/ic_menu_pencil.png" alt=""></button>
+        <button class="color" id="color"></button>
+        <button class="dl" id="dl"><img src="./imgs/download.png" alt=""></button>
+        <button class="clear" id="clear"><img src="./imgs/clean.png" alt=""></button>
+        <button class="eraser" id="eraser"><img src="./imgs/ic_menu_hard_eraser.png" alt=""></button>
+    </div>
+    <div class="alert">canvas笔刷功能还未完善</div>
+    <div class="caveat">
+        <div class="description">Are you sure to clear the artboard?</div>
+        <button id="clearAll">Yes</button>
+        <button id="noClear">No</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
