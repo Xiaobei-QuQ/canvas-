@@ -4,7 +4,7 @@ var canvas = {
         this.context = this.sketchpad.getContext('2d')
         this.percent = 0.5;
         this.alpha = 1;
-        this.rgb = '0,0,0'
+        this.rgb = [0,0,0]
         this.lineWidth = 5
         this.using = true
         this.chooseBrush = false
@@ -18,6 +18,7 @@ var canvas = {
         this.bind()
         this.listen()
         this.chooseSize()
+        this.chooseAlpha()
         this.setBg()
     },
     start: function() {
@@ -81,7 +82,7 @@ var canvas = {
         this.context.moveTo(x1, y1) // 起点
         this.context.lineTo(x2, y2) // 终点
         this.context.closePath()
-        this.context.strokeStyle = 'rgba(' + this.rgb + ',' + this.alpha+')'
+        this.context.strokeStyle = 'rgb(' + this.rgbString + ')'
         this.context.lineWidth = this.lineWidth * this.percent
         this.context.stroke()
     },
@@ -144,9 +145,8 @@ var canvas = {
             if(e.target&&e.target.classList.contains('button')){
                 var chooseColor = window.getComputedStyle(e.target).backgroundColor
                 document.querySelector('.footer-control button.color').style.backgroundColor = chooseColor
-                _this.rgb = chooseColor.match(/(\d{1,3})/g).reduce(function (v1,v2) {
-                    return v1+','+v2
-                })
+                _this.rgb = chooseColor.match(/(\d{1,3})/g)
+                _this.chooseAlpha()
             }
         },false)
         var colors = document.querySelector('.colors')
@@ -233,6 +233,7 @@ var canvas = {
                 }
                 if(node == document.querySelector('.control-alpha')){
                     _this.alpha = moveL / _this.max
+                    _this.chooseAlpha()
                 }
             }
             node.ontouchend = function (e) {
@@ -244,6 +245,12 @@ var canvas = {
         var circleAlpha = document.querySelector('.circle-alpha')
         turnSize(controlWidth,circleWidth)
         turnSize(controlAlpha,circleAlpha)
+    },
+    chooseAlpha : function() {
+        var _this = this
+        this.rgbString = this.rgb.map(function (value) {
+            return  parseInt(value) + parseInt(100 -_this.alpha * 100)
+        })
     },
     setCircle() {
         var controlWidth = document.querySelector('.control-width')
